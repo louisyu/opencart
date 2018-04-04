@@ -126,8 +126,9 @@ $(document).ready(function() {
 
 			$('#modal-image').remove();
 
+			var $filemanager_url = 'index.php?route=common/filemanager&user_token=' + getURLVar('user_token') + '&target=' + $element.parent().find('input').attr('id') + '&thumb=' + $element.attr('id');
 			$.ajax({
-				url: 'index.php?route=common/filemanager&user_token=' + getURLVar('user_token') + '&target=' + $element.parent().find('input').attr('id') + '&thumb=' + $element.attr('id'),
+				url: $filemanager_url,
 				dataType: 'html',
 				beforeSend: function() {
 					$button.prop('disabled', true);
