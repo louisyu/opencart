@@ -251,6 +251,8 @@ class ControllerProductProduct extends Controller {
 			} else {
 				$data['stock'] = $this->language->get('text_instock');
 			}
+			
+			$data['is_purchase'] = $product_info['stock_status'] != '店內銷售';
 
 			$this->load->model('tool/image');
 
