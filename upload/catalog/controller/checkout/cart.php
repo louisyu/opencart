@@ -273,8 +273,13 @@ class ControllerCheckoutCart extends Controller {
 		$this->load->model('catalog/product');
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
+		
+		$is_purchase = $product_info['stock_status'] != '店內銷售';
+		if (!$is_purchase) {
+	   	   $json['error']['is_purchase'] = '請至店內購買';
+		}
 
-		if ($product_info) {
+		if ($product_info && $is_purchase) {
 			if (isset($this->request->post['quantity'])) {
 				$quantity = (int)$this->request->post['quantity'];
 			} else {
