@@ -1,0 +1,49 @@
+<div class="box category">
+  <div class="box-heading">{{ heading_title }}</div>
+  <div class="box-content">
+<ul class="box-category treeview-list treeview">
+  {% for category in categories %}
+        {% if category.children %}
+			<li class="expandable"><a class="" href="{{ category.href }}">{{ category.name }}</a>
+			
+              {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+				<ul>
+                {% for child in children %}
+					<!-- 2 Level Sub Categories START -->
+					{% if child.childs %}
+					  <li><a href="{{ child.href }}">{{ child.name }}</a>
+					  
+			              {% for childs_col in child.childs|batch(child.childs|length / child.column|round(1, 'ceil')) %}
+							<ul>
+							  {% for childs_2 in childs_col %}
+								<li><a href="{{ childs_2.href }}">{{ childs_2.name }}</a></li>
+							  {% endfor %}
+							</ul>
+						  {% endfor %}
+
+					  </li>
+					{% else %}
+					  <li><a href="{{ child.href }}">{{ child.name }}</a></li>
+					{% endif %}
+					<!-- 2 Level Sub Categories END -->
+                {% endfor %}
+              
+			    </ul>
+              {% endfor %}
+           
+
+			</li>
+        {% else %}
+			<li class="expandable"><a class="" href="{{ category.href }}">{{ category.name }}</a></li>
+        {% endif %}
+        {% endfor %}
+		{% if blog_enable %}
+       	<li> <a href="{{ all_blogs }}">{{ text_blog }}</a></li>       
+		{% endif %}
+ </ul>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,28 @@
+<div class="container">
+<div class="row">
+<div id="content" class="col-sm-12">
+
+<div id="carousel-{{ module }}" class="banners-slider-carousel">
+<div class="box-heading">{{ our_client }}</div>
+	<div class="customNavigation">
+		<a class="fa prev fa fa-arrow-left">&nbsp;</a>
+		<a class="fa next fa fa-arrow-right">&nbsp;</a>
+	</div>
+  <div class="product-carousel" id="module-{{ module }}-carousel">
+    {% for banner in banners %}
+    	<div class="slider-item">
+		<div class="product-block">
+		<div class="product-block-inner">
+			{% if banner.link %}
+   <a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" /></a>
+    {% else %}
+    <img src="{{ banner.image }}" alt="{{ banner.title }}" />
+    {% endif %}
+		</div></div></div>
+    {% endfor %}
+  </div>
+</div>
+<span class="module_default_width" style="display:none; visibility:hidden"></span>
+</div>
+</div>
+</div>

@@ -28,8 +28,15 @@ class ControllerCommonFooter extends Controller {
 		$data['order'] = $this->url->link('account/order', '', true);
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
 		$data['newsletter'] = $this->url->link('account/newsletter', '', true);
-
+	
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
+		
+		$data['footerbottom'] = $this->load->controller('common/footerbottom');
+		$data['footer_top'] = $this->load->controller('common/footer_top');
+		$data['footer_right'] = $this->load->controller('common/footer_right');
+		$data['footerleft'] = $this->load->controller('common/footerleft');
+		$data['footerleftcol'] = $this->load->controller('common/footerleftcol');
+
 
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
@@ -56,6 +63,15 @@ class ControllerCommonFooter extends Controller {
 			$this->model_tool_online->addOnline($ip, $this->customer->getId(), $url, $referer);
 		}
 
+		
+		
+	
+		$data['footerbottom'] = $this->load->controller('common/footerbottom');
+		$data['footer_top'] = $this->load->controller('common/footer_top');
+		$data['footer_right'] = $this->load->controller('common/footer_right');
+		$data['footerleft'] = $this->load->controller('common/footerleft');
+		$data['footerleftcol'] = $this->load->controller('common/footerleftcol');
+		
 		$data['scripts'] = $this->document->getScripts('footer');
 		
 		return $this->load->view('common/footer', $data);

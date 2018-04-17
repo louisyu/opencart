@@ -249,8 +249,6 @@ class ControllerProductProduct extends Controller {
 			} else {
 				$data['stock'] = $this->language->get('text_instock');
 			}
-			
-			$data['is_purchase'] = $product_info['stock_status'] != '店內銷售';
 
 			$this->load->model('tool/image');
 
@@ -420,7 +418,9 @@ class ControllerProductProduct extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $rating,
-					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+					'quick'        => $this->url->link('product/quick_view','&product_id=' . $result['product_id'])
+
 				);
 			}
 
