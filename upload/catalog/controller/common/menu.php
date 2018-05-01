@@ -7,7 +7,19 @@ class ControllerCommonMenu extends Controller {
 
 		$this->load->model('catalog/product');
 
+		$this->load->model('catalog/information');
 		$data['categories'] = array();
+		
+		foreach ($this->model_catalog_information->getInformations() as $info) {
+		    if ($info['information_id'] == '7') {
+		        $data['categories'][] = array(
+		            'name'     => $info['title'],
+		            'children' => array(),
+		            'column'   => 1,
+		            'href'     => $this->url->link('information/information', 'language=' . $this->config->get('config_language') . '&information_id=' . $info['information_id'])
+		        );
+		    }
+		}
 
 		$categories = $this->model_catalog_category->getCategories(0);
 		$data['home'] = $this->url->link('common/home');
