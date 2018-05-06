@@ -173,7 +173,7 @@ padding: 8px 12px;
 .header-search{float:left;}
 .header-cart{float:right;}
 #logo {
-	margin: 44px 0 32px;
+	margin: 44px 0 0px;
 	display:inline-block;
 }
 /* search */

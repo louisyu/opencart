@@ -338,13 +338,13 @@ $('#button-cart2').on('click', function() {
 					'</div>' 
 				});
 
-					parent.$('#cart > button').html('<i class="fa fa-shopping-cart"></i> ' + json['total']);
+					parent.$('#cart > button').html(json['total']);
 
 				parent.$('#cart > ul').load('index.php?route=common/cart/info ul li');
 					
 				} else {
 					
-					$('#cart > button').html('<i class="fa fa-shopping-cart"></i> ' + json['total']);
+					$('#cart > button').html(json['total']);
 					
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
 					

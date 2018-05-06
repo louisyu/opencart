@@ -190,7 +190,7 @@ var cart = {
 				     });
 
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
-						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+						$('#cart > button').html('<span id="cart-total"> ' + json['total'] + '</span>');
 				}
 			}
 		});
@@ -206,7 +206,7 @@ var cart = {
 					location = 'index.php?route=checkout/cart';
 				} else {
 					$('#cart > ul').load('index.php?route=common/cart/info cart_prod');
-                                        $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                                        $('#cart > button').html('<span id="cart-total"> ' + json['total'] + '</span>');
 				}
 			}
 		});
@@ -222,7 +222,7 @@ var cart = {
 					location = 'index.php?route=checkout/cart';
 				} else {
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
-                                        $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                                        $('#cart > button').html('<span id="cart-total"> ' + json['total'] + '</span>');
 				}
 			}
 		});
@@ -252,7 +252,7 @@ var voucher = {
 					location = 'index.php?route=checkout/cart';
 				} else {
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
-                                        $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                                        $('#cart > button').html('<span id="cart-total"> ' + json['total'] + '</span>');
 				}
 			}
 		});
