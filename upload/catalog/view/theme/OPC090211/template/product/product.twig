@@ -258,17 +258,7 @@
 			</div>
 			-->
           </div>
-		   </div>
-		  
-		   <!-- product page tab code start-->
-		 {% if column_left and column_right %}
-         {% set class = 'col-sm-6' %}
-         {%  elseif column_left or column_right %}
-         {% set class = 'col-sm-12' %}
-         {% else %}
-         {% set class = 'col-sm-12' %}
-        {% endif %}
-	  <div id="tabs_info" class="product-tab {{ class }}">
+          <div id="tabs_info">
           <ul class="nav nav-tabs">
             <li class="active"><a href="#tab-description" data-toggle="tab">{{ tab_description }}</a></li>
             {% if attribute_groups %}
@@ -349,7 +339,7 @@
             {% endif %}</div>
 		  </div>
       </div>
-	  
+		   </div>
 	 
 	 {% if products %}
 	  <div class="box related">
