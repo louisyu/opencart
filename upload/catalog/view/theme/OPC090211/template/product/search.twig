@@ -129,9 +129,10 @@
 				</div>
 				{% endif %}
 			</div>
+			{#
 			<div class="prod_cart">
 				<button type="button" class="addtocart" onclick="cart.add('{{ product.product_id }} ');">{{ button_cart }} </button>
-			</div>
+			</div>#}
 		</div>
             <div class="product-details">
               <div class="caption">
@@ -173,7 +174,7 @@
 	            {% endif %}
               </div>
               <div class="button-group list">
-                <button type="button" class="addtocart" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }} ');">{{ button_cart }}</button>
+                {#<button type="button" class="addtocart" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }} ');">{{ button_cart }}</button>#}
                 <button type="button" class="wishlist" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button>
                 <button type="button" class="compare" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button>
               </div>

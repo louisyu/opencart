@@ -24,9 +24,11 @@
 				<span class="saleicon sale">Sale</span>  
 			   {% endif %}
 			</div>
+			{#
 			<div class="prod_cart">
 				<button type="button" class="addtocart" onclick="cart.add('{{ product.product_id }} ');">{{ button_cart }} </button>
 			</div>
+			#}
 		</div>
       	<div class="product-details">
 			<div class="caption">
@@ -61,7 +63,7 @@
 			</div>		
  	    
 			<div class="button-group">
-				<button type="button" class="addtocart" onclick="cart.add('{{ product.product_id }} ');">{{ button_cart }} </button>
+				{#<button type="button" class="addtocart" onclick="cart.add('{{ product.product_id }} ');">{{ button_cart }} </button>#}
 				<button class="wishlist" type="button" data-toggle="tooltip" title="{{ button_wishlist }} " onclick="wishlist.add('{{ product.product_id }} ');"><i class="fa fa-heart"></i></button>
 				<button class="compare" type="button" data-toggle="tooltip" title="{{ button_compare }} " onclick="compare.add('{{ product.product_id }} ');"><i class="fa fa-exchange"></i></button>
 			</div>
